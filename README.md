@@ -3,12 +3,6 @@
 Utility class to make it easier to access Clojure functions from Java
 
 ## Usage
-
-[Leiningen](https://github.com/technomancy/leiningen) dependency information:
-
-```clojure
-[defng/joculer "0.4.0"]
-```
     
 [Maven](http://maven.apache.org/) dependency information:
 ```xml
