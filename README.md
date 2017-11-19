@@ -7,15 +7,15 @@ Utility class to make it easier to accessClojure functions from Java
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
 ```clojure
-[joculer "0.4.0"]
+[defng/joculer "0.4.0"]
 ```
     
 [Maven](http://maven.apache.org/) dependency information:
 ```xml
     <dependency>
-      <groupId>joculer</groupId>
+      <groupId>defng</groupId>
       <artifactId>joculer</artifactId>
-      <version>0.1.0</version>
+      <version>0.4.0</version>
     </dependency>
 ```
 
