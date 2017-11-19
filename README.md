@@ -1,6 +1,6 @@
 # Joculer
 
-Utility class to make it easier to accessClojure functions from Java
+Utility class to make it easier to access Clojure functions from Java
 
 ## Usage
 
