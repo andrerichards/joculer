@@ -55,6 +55,18 @@ public class JoculerTest {
     }
 
     @Test
+    public void test_keywordizeKeys() throws Exception {
+        {
+            Map m = (Map) Joculer.readData("defng.joculer.test-data", "m");
+            assertTrue(eq(m, Joculer.keywordizeKeys(Joculer.stringifyKeys(m))));
+        }
+        {
+            Map m = (Map) Joculer.readData("defng.joculer.test-data", "nested-m");
+            assertTrue(eq(m, Joculer.keywordizeKeys(Joculer.stringifyKeys(m))));
+        }
+    }
+
+    @Test
     public void test_eq() throws Exception {
         List l1 = listOf(1, 2, 3);
         List l2 = listOf(1, 2, 3);

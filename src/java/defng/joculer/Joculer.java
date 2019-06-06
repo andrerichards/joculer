@@ -22,7 +22,9 @@ public class Joculer {
     static IFn DEREF = Clojure.var("clojure.core", "deref");
     static IFn EQ = Clojure.var("clojure.core", "=");
     static IFn KEYWORD = Clojure.var("clojure.core", "keyword");
+    static IFn MERGE = Clojure.var("clojure.core", "merge");
     static IFn STRINGIFY_KEYS = Clojure.var("clojure.walk", "stringify-keys");
+    static IFn KEYWORDIZE_KEYS = Clojure.var("clojure.walk", "keywordize-keys");
     static IFn TO_CLOJURE = Clojure.var(NAMESPACE, "->clojure");
     static IFn PRETTY = Clojure.var(NAMESPACE, "pretty");
 
@@ -80,6 +82,13 @@ public class Joculer {
     }
 
     /**
+     * Merge two maps
+     */
+    public static Map merge(Map m1, Map m2) {
+        return (Map) MERGE.invoke(toClojure(m1), toClojure(m2));
+    }
+
+    /**
      * Reads a 'data' Var (i.e. not a function) and returns the data contained in Var (i.e. deref)
      */
     public static Object readData(String namespace, String var) {
@@ -95,6 +104,15 @@ public class Joculer {
      */
     public static Object stringifyKeys(Object m) {
         return STRINGIFY_KEYS.invoke(m);
+    }
+
+    /**
+     * Recursively transforms all map keys from strings to keywords.
+     * <p>
+     * Calls clojure.walk/keywordize-keys
+     */
+    public static Object keywordizeKeys(Object m) {
+        return KEYWORDIZE_KEYS.invoke(m);
     }
 
     /**

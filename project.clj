@@ -1,4 +1,4 @@
-(defproject defng/joculer "0.4.0"
+(defproject defng/joculer "0.5.0"
   :description "Utility class to make accessing Clojure functions easier from Java"
   :url "https://github.com/andrerichards/joculer"
   :license {:name "Eclipse Public License"
